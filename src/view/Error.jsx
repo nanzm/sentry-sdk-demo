@@ -17,6 +17,7 @@ function Error() {
       <h1>Error</h1>
       <button onClick={() => handleError()}>undefined 按钮</button>
       <button onClick={() => handleError1()}>随机错误 按钮</button>
+      <button onClick={() => dd()}>崩溃 按钮</button>
     </div>
   );
 }

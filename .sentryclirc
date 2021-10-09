@@ -1,0 +1,7 @@
+[auth]
+token=4d8c437116d7422482a92a46d37b3688e501b60f1d8045ef860813e35d0f3d28
+
+[defaults]
+url = http://localhost:9000
+org = nancode
+project = react-demo

@@ -1,6 +1,7 @@
 import React from "react";
+import * as Sentry from "@sentry/react";
 
-import OhbugConfig from "./ohbug/Config";
+import SentryConfig from "./sentry/Config";
 
 import Ajax from "./view/Ajax";
 import Error from "./view/Error";
@@ -13,24 +14,23 @@ import Stat from "./view/Stat";
 
 function App() {
   React.useEffect(() => {
-    // Browser.setUser("12312312312", { userName: "王小明", age: 18 });
   }, []);
 
   return (
-    <>
-      <OhbugConfig />
+    <Sentry.ErrorBoundary fallback={<p>An error has occurred</p>}>
+      <SentryConfig/>
       <div className="section-groups">
-        <Error />
-        <Ajax />
-        <HashChange />
-        <History />
-        <InsertRes />
-        <CustomReport />
-        <PromiseError />
-        <Stat />
+        <Error/>
+        <Ajax/>
+        <HashChange/>
+        <History/>
+        <InsertRes/>
+        <CustomReport/>
+        <PromiseError/>
+        <Stat/>
       </div>
-    </>
+    </Sentry.ErrorBoundary>
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);
