@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <Sentry.ErrorBoundary fallback={<p>An error has occurred</p>}>
+    <Sentry.ErrorBoundary fallback={<p>An error has occurred</p>} showDialog>
       <SentryConfig/>
       <div className="section-groups">
         <Error/>
